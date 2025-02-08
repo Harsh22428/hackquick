@@ -83,6 +83,23 @@ export default function Navbar() {
             >
               Register
             </Link>
+            <label>
+              <input
+                type="checkbox"
+                className="hidden"
+                id="theme-toggle"
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    document.documentElement.classList.add("dark")
+                  } else {
+                    document.documentElement.classList.remove("dark")
+                  }
+                }}
+              />
+              <div className="bg-gray-300 dark:bg-gray-600 w-14 h-8 flex items-center rounded-full p-1 duration-300 ease-in-out cursor-pointer">
+                <div className="bg-white dark:bg-gray-300 w-6 h-6 rounded-full shadow-md transform duration-300 ease-in-out"></div>
+              </div>
+            </label>
           </div>
 
           {/* Mobile Menu Button */}
