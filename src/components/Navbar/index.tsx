@@ -5,20 +5,19 @@ import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 import { useRouter } from "next/navigation";
 
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [showLoans, setShowLoans] = useState(false)
-  // const router = useRouter();
+  const router = useRouter();
 
   const loans = ["Personal Loan", "Business Loan", "Home Loan", "Education Loan",
     "2-Wheeler Loan","Car Loan"
   ]
-  // const handleLoanClick = (loanType) => {
-  //   // Navigate to a dynamic loan page (e.g., /loan/personal-loan)
-  //   const loanSlug = loanType.toLowerCase().replace(/\s+/g, "-"); // Convert to URL-friendly format
-  //   router.push(`/loan/${loanSlug}`);
-  // };
+
+  const handleLoanClick = (loanType:any) => {
+    const loanSlug = loanType.toLowerCase().replace(/\s+/g, "-");
+    router.push(`/${loanSlug}`);
+  };
 
   return (
     <nav className="bg-white shadow-sm fixed w-full z-50 h-16">
@@ -40,7 +39,6 @@ export default function Navbar() {
                 className="text-gray-700 hover:text-indigo-800 px-3 py-2 text-sm font-medium inline-flex items-center"
                 onMouseEnter={() => setShowLoans(true)}
                 onMouseLeave={() => setShowLoans(false)}
-               
               >
                 Loans
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -52,15 +50,18 @@ export default function Navbar() {
                   onMouseEnter={() => setShowLoans(true)}
                   onMouseLeave={() => setShowLoans(false)}
                 >
-                  {loans.map((loan) => (
-                    <a
-                      key={loan}
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-800"
-                    >
-                      {loan}
-                    </a>
-                  ))}
+                  {loans.map((loan) => {
+                    const loanSlug = loan.toLowerCase().replace(/\s+/g, "-");
+                    return (
+                      <a
+                        key={loan}
+                        href={`/${loanSlug}`}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-800"
+                      >
+                        {loan}
+                      </a>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -81,7 +82,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center space-x-4">
             <Link
-              href="/login"
+              href="/dashboard"
               className="text-indigo-800 border-2 border-indigo-800 px-6 py-1.5 rounded text-sm font-medium hover:bg-indigo-50"
             >
               Login
