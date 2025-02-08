@@ -2,13 +2,13 @@
 export default function ProcessSection() {
   const steps = [
     {
-      title: "Discover Schemes",
+      title: "Discover Loans",
       description: "Explore curated government programs matching your needs",
       icon: "/assets/icons/search.svg",
     },
     {
       title: "Check Eligibility",
-      description: "Quick assessment for scheme qualification",
+      description: "Quick assessment for Loans qualification",
       icon: "/assets/icons/checklist.svg",
     },
     {

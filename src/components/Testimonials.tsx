@@ -2,12 +2,12 @@
 export default function Testimonials() {
   const testimonials = [
     {
-      text: "This platform simplified the entire process of applying for agricultural subsidies. Got approval within 15 days!",
+      text: "This platform simplified the entire process of applying for a loan. It was easy and quick to use.",
       author: "Ramesh Patel",
       role: "Farmer, Gujarat",
     },
     {
-      text: "As a student, I found the perfect scholarship scheme through this portal. Highly recommended!",
+      text: "As a student, I found the perfect loan scheme through this portal. Highly recommended!",
       author: "Priya Sharma",
       role: "Student, Delhi",
     },

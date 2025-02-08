@@ -9,12 +9,11 @@ export default function HeroSection() {
               Empowering Citizens Through Digital Governance
             </h1>
             <p className="text-lg text-gray-200 mb-8">
-              Access government schemes, services, and benefits through a single
-              digital platform.
+            India’s first RBI-aligned platform for fair, transparent, and ethical digital lending
             </p>
             <div className="flex gap-4">
               <button className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
-                Explore Schemes
+                Explore Loans
               </button>
               <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition-all">
                 Watch Video
