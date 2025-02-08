@@ -10,14 +10,14 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "What is JanSamarth Portal?",
+    question: "What is Inflend Portal?",
     answer:
-      "JanSamarth Portal is a one-stop digital platform for credit-linked government schemes.",
+      "Inflend Portal is a one-stop digital platform for credit-linked government schemes.",
   },
   {
-    question: "How can I apply for the Scheme?",
+    question: "How can I apply for the Loans",
     answer:
-      "You can apply by visiting the official JanSamarth portal and selecting the desired scheme.",
+      "You can apply by visiting the official Inflend portal and selecting the desired loan from the DLA.",
   },
   {
     question: "What are the documents requirement?",
@@ -29,11 +29,7 @@ const faqs: FAQItem[] = [
     answer:
       "Yes, anyone who meets the eligibility criteria can apply for the loan.",
   },
-  {
-    question: "How can I see my application?",
-    answer:
-      "Sign in with your credentials and go to the 'My Applications' tab to check your status.",
-  },
+ 
 ];
 
 const FAQ = () => {
