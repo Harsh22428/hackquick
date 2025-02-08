@@ -7,13 +7,13 @@ import HeroSection from "@/components/HeroSection";
 import ProcessSection from "@/components/ProcessSection";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
-import { useRouter } from "next/navigaton";
+// import { useRouter } from "next/navigaton";
 
 export default function Home() {
-  const router = useRouter();
-  const navigate = () => {
-    router.push("/user_dashboard");
-  };
+  // const router = useRouter();
+  // const navigate = () => {
+  //   router.push("/");
+  // };
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
