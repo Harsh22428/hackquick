@@ -75,7 +75,7 @@ const FilterSection = ({ selectedBanks, toggleBank }: {
             onClick={() => toggleBank(bank.name)}
             className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
               selectedBanks.has(bank.name)
-                ? "bg-emerald-50 text-emerald-600"
+                ? "bg-emerald-50 text-primary"
                 : "text-gray-600 hover:bg-gray-50"
             }`}
           >
@@ -160,8 +160,8 @@ export default function Home() {
             {loans.map((loan) => (
               <Card key={loan.title} className="p-6 hover:shadow-md transition-shadow">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge className="bg-emerald-500 text-white">{loan.tag}</Badge>
-                  <Badge className="bg-emerald-100 text-emerald-700">
+                  <Badge className="text-primary text-white">{loan.tag}</Badge>
+                  <Badge className="bg-emerald-100 text-primary">
                     100% Paperless Approval
                   </Badge>
                 </div>
@@ -169,7 +169,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
                   <div className="flex gap-4 flex-1">
                     <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0">
-                      <IndianRupee className="w-6 h-6 text-emerald-600" />
+                      <IndianRupee className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold text-gray-900">{loan.title}</h3>
@@ -194,7 +194,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex flex-col sm:flex-col gap-2 w-full sm:w-auto">
-                    <Button className="w-full sm:w-40 bg-emerald-500 hover:bg-emerald-600"
+                    <Button className="w-full sm:w-40 text-primary hover:bg-emerald-600"
                     onClick={handleLogin}>
                       Apply Now
                     </Button>

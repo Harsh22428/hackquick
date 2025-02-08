@@ -35,9 +35,9 @@ export default function Home() {
         <Testimonials />
 
         {/* Partner Logos Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-center text-gray-500 text-sm font-semibold mb-8">
+            <h3 className="text-center  text-sm font-semibold mb-8">
               Trusted by Government Organizations
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
