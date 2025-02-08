@@ -23,7 +23,7 @@ export default function Navbar() {
 
     return () => clearTimeout(timeout)
   }, [])
-=======
+
   const handleLoanClick = (loanType:any) => {
     const loanSlug = loanType.toLowerCase().replace(/\s+/g, "-");
     router.push(`/${loanSlug}`);
@@ -124,11 +124,11 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
             <Link
 
-              href="/login"
-              className="text-indigo-800 border-2 border-indigo-800 px-6 py-1.5 rounded text-sm font-medium transition-colors duration-200 hover:bg-indigo-50"
+              // href="/login"
+              // className="text-indigo-800 border-2 border-indigo-800 px-6 py-1.5 rounded text-sm font-medium transition-colors duration-200 hover:bg-indigo-50"
 
               href="/dashboard"
-              className="text-indigo-800 border-2 border-indigo-800 px-6 py-1.5 rounded text-sm font-medium hover:bg-indigo-50"
+              className="text-indigo-800 border-2 border-indigo-800 px-6 py-1.5 rounded text-sm font-medium transition-colors duration-200 hover:bg-indigo-50"
 
             >
               Login
