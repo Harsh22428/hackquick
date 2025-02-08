@@ -3,14 +3,17 @@
 import { useState, useCallback } from "react"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [showLoans, setShowLoans] = useState(false)
+  const router = useRouter();
 
   const loans = ["Personal Loan", "Business Loan", "Home Loan", "Education Loan",
     "2-Wheeler Loan","Car Loan"
   ]
+
 
   // Increased delay time for better usability
   const closeLoansMenu = useCallback(() => {
@@ -20,6 +23,12 @@ export default function Navbar() {
 
     return () => clearTimeout(timeout)
   }, [])
+=======
+  const handleLoanClick = (loanType:any) => {
+    const loanSlug = loanType.toLowerCase().replace(/\s+/g, "-");
+    router.push(`/${loanSlug}`);
+  };
+
 
   return (
     <nav className="bg-white shadow-sm fixed w-full z-50 h-16">
@@ -48,6 +57,7 @@ export default function Navbar() {
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
 
+
               {/* Extended hover area */}
               <div className="absolute -top-2 left-0 right-0 h-4 bg-transparent" />
 
@@ -73,6 +83,28 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
+
+              {showLoans && (
+                <div
+                  className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1"
+                  onMouseEnter={() => setShowLoans(true)}
+                  onMouseLeave={() => setShowLoans(false)}
+                >
+                  {loans.map((loan) => {
+                    const loanSlug = loan.toLowerCase().replace(/\s+/g, "-");
+                    return (
+                      <a
+                        key={loan}
+                        href={`/${loanSlug}`}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-800"
+                      >
+                        {loan}
+                      </a>
+                    );
+                  })}
+                </div>
+              )}
+
             </div>
 
             <Link href="/faqs" className="text-gray-700 hover:text-indigo-800 px-3 py-2 text-sm font-medium rounded-md relative after:absolute after:inset-0 after:bg-gray-100 after:scale-0 hover:after:scale-100 after:transition-transform after:duration-300 after:-z-10">
@@ -91,8 +123,13 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center space-x-4">
             <Link
+
               href="/login"
               className="text-indigo-800 border-2 border-indigo-800 px-6 py-1.5 rounded text-sm font-medium transition-colors duration-200 hover:bg-indigo-50"
+
+              href="/dashboard"
+              className="text-indigo-800 border-2 border-indigo-800 px-6 py-1.5 rounded text-sm font-medium hover:bg-indigo-50"
+
             >
               Login
             </Link>
