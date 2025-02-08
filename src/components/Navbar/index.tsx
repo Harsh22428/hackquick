@@ -3,14 +3,22 @@
 import { useState } from "react"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
+import { useRouter } from "next/navigation";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [showLoans, setShowLoans] = useState(false)
+  // const router = useRouter();
 
   const loans = ["Personal Loan", "Business Loan", "Home Loan", "Education Loan",
     "2-Wheeler Loan","Car Loan"
   ]
+  // const handleLoanClick = (loanType) => {
+  //   // Navigate to a dynamic loan page (e.g., /loan/personal-loan)
+  //   const loanSlug = loanType.toLowerCase().replace(/\s+/g, "-"); // Convert to URL-friendly format
+  //   router.push(`/loan/${loanSlug}`);
+  // };
 
   return (
     <nav className="bg-white shadow-sm fixed w-full z-50 h-16">
@@ -32,6 +40,7 @@ export default function Navbar() {
                 className="text-gray-700 hover:text-indigo-800 px-3 py-2 text-sm font-medium inline-flex items-center"
                 onMouseEnter={() => setShowLoans(true)}
                 onMouseLeave={() => setShowLoans(false)}
+               
               >
                 Loans
                 <ChevronDown className="ml-1 h-4 w-4" />
