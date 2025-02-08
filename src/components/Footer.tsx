@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Left Section */}
           <div>
             <h2 className="text-2xl font-bold">
-              <span className="text-orange-400">Jan</span>Samarth
+              <span className="text-orange-400">Infi</span>Lend
             </h2>
             <p className="text-sm mt-2 opacity-80">
               National Portal for Credit Linked Government Schemes
@@ -78,7 +78,7 @@ const Footer = () => {
             <a href="#">Disclaimer</a>
           </div>
           <p className="mt-2 md:mt-0">
-            &copy; 2022 - 2025 JanSamarth. All Rights Reserved.
+            &copy;  All Rights Reserved.
           </p>
         </div>
 
