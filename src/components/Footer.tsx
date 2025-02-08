@@ -61,11 +61,11 @@ const Footer = () => {
             <p className="text-sm mt-2 opacity-80">For Borrower</p>
             <div className="flex items-center space-x-2 mt-1">
               <Mail className="w-5 h-5" />
-              <span className="text-sm">customer.support@jansamarth.in</span>
+              <span className="text-sm">customer.support@infilend.in</span>
             </div>
             <div className="flex items-center space-x-2 mt-1">
               <Phone className="w-5 h-5" />
-              <span className="text-sm">+91 79690-76111</span>
+              <span className="text-sm">+91 xxxxxxxxx</span>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ export default function StatsSection() {
       </div>
       <div className="text-center">
         <div className="text-4xl font-bold text-white mb-2">200+</div>
-        <div className="text-gray-300">Schemes Listed</div>
+        <div className="text-gray-300">Loans Offered</div>
       </div>
       <div className="text-center">
         <div className="text-4xl font-bold text-white mb-2">1M+</div>
