@@ -25,11 +25,11 @@ export default function SchemesSection() {
               key={category}
               className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <div className="h-12 w-12 bg-primary/10  rounded-full flex items-center justify-center mb-4">
                 <img
-                  src={`/assets/icons/${category.toLowerCase()}.svg`}
+                  src={`/assets/icons/${category.toLowerCase()}.jpeg`}
                   alt={category}
-                  className="h-6 w-6 text-primary"
+                  className="h-full w-full rounded-full text-primary"
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">

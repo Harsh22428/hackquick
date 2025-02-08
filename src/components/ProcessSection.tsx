@@ -4,22 +4,22 @@ export default function ProcessSection() {
     {
       title: "Discover Loans",
       description: "Explore curated government programs matching your needs",
-      icon: "/assets/icons/search.svg",
+      icon: "/assets/loupe.png",
     },
     {
       title: "Check Eligibility",
       description: "Quick assessment for Loans qualification",
-      icon: "/assets/icons/checklist.svg",
+      icon: "/assets/skills.png",
     },
     {
       title: "Apply Online",
       description: "Digital application with document upload",
-      icon: "/assets/icons/apply.svg",
+      icon: "/assets/web.png",
     },
     {
       title: "Track Status",
       description: "Real-time application monitoring",
-      icon: "/assets/icons/track.svg",
+      icon: "/assets/tracking.png",
     },
   ];
 
