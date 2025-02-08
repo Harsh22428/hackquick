@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Navbar from "@/components/Navbar";
 
 const banks = [
   { name: "HDFC", selected: true },
@@ -106,6 +107,9 @@ export default function Home() {
     router.push("/personal-loan/apply"); 
   };
   return (
+    <div className="">
+
+      <Navbar />
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header */}
@@ -116,8 +120,8 @@ export default function Home() {
               <div className="flex gap-1">
                 {[1, 2, 3, 4].map((star) => (
                   <Star
-                    key={star}
-                    className={`w-5 h-5 ${star <= 4 ? "text-yellow-400" : "text-gray-300"} fill-current`}
+                  key={star}
+                  className={`w-5 h-5 ${star <= 4 ? "text-yellow-400" : "text-gray-300"} fill-current`}
                   />
                 ))}
               </div>
@@ -132,7 +136,7 @@ export default function Home() {
                 variant="outline" 
                 className="lg:hidden"
                 onClick={() => setIsOpen(true)}
-              >
+                >
                 <Filter className="w-4 h-4 mr-2" />
                 Filters
               </Button>
@@ -197,7 +201,7 @@ export default function Home() {
                     <Button
                       variant="outline"
                       className="w-full sm:w-40 text-emerald-600 border-emerald-200 hover:bg-emerald-50"
-                    >
+                      >
                       Explore
                     </Button>
                   </div>
@@ -208,5 +212,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+            </div>
   );
 }
