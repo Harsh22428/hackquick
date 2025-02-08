@@ -20,7 +20,12 @@ export default function SchemesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {["personal loans", "business loans", "home loans", "education loans"].map((category) => (
+          {[
+            "Personal Loans",
+            "Business Loans",
+            "Home Loans",
+            "Education Loans",
+          ].map((category) => (
             <div
               key={category}
               className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
