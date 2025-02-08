@@ -3,17 +3,14 @@
 import { useState, useCallback } from "react"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
-import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [showLoans, setShowLoans] = useState(false)
-  const router = useRouter();
 
   const loans = ["Personal Loan", "Business Loan", "Home Loan", "Education Loan",
     "2-Wheeler Loan","Car Loan"
   ]
-
 
   // Increased delay time for better usability
   const closeLoansMenu = useCallback(() => {
@@ -23,12 +20,6 @@ export default function Navbar() {
 
     return () => clearTimeout(timeout)
   }, [])
-
-  const handleLoanClick = (loanType:any) => {
-    const loanSlug = loanType.toLowerCase().replace(/\s+/g, "-");
-    router.push(`/${loanSlug}`);
-  };
-
 
   return (
     <nav className="bg-white shadow-sm fixed w-full z-50 h-16">
@@ -57,7 +48,6 @@ export default function Navbar() {
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
 
-
               {/* Extended hover area */}
               <div className="absolute -top-2 left-0 right-0 h-4 bg-transparent" />
 
@@ -76,43 +66,21 @@ export default function Navbar() {
                 {loans.map((loan, index) => (
                   <Link
                     key={loan}
-                    href={`/loans/${loan.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={`/${loan.toLowerCase().replace(/\s+/g, '-')}`}
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-indigo-800 transition-colors duration-200"
                   >
                     {loan}
                   </Link>
                 ))}
               </div>
-
-              {showLoans && (
-                <div
-                  className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1"
-                  onMouseEnter={() => setShowLoans(true)}
-                  onMouseLeave={() => setShowLoans(false)}
-                >
-                  {loans.map((loan) => {
-                    const loanSlug = loan.toLowerCase().replace(/\s+/g, "-");
-                    return (
-                      <a
-                        key={loan}
-                        href={`/${loanSlug}`}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-800"
-                      >
-                        {loan}
-                      </a>
-                    );
-                  })}
-                </div>
-              )}
-
             </div>
 
             <Link href="/faqs" className="text-gray-700 hover:text-indigo-800 px-3 py-2 text-sm font-medium rounded-md relative after:absolute after:inset-0 after:bg-gray-100 after:scale-0 hover:after:scale-100 after:transition-transform after:duration-300 after:-z-10">
               FAQs
             </Link>
-            <Link href="/grievances" className="text-gray-700 hover:text-indigo-800 px-3 py-2 text-sm font-medium rounded-md relative after:absolute after:inset-0 after:bg-gray-100 after:scale-0 hover:after:scale-100 after:transition-transform after:duration-300 after:-z-10">
+            <a href="https://cms.rbi.org.in/cms/indexpage.html#eng" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-indigo-800 px-3 py-2 text-sm font-medium rounded-md relative after:absolute after:inset-0 after:bg-gray-100 after:scale-0 hover:after:scale-100 after:transition-transform after:duration-300 after:-z-10">
               Grievances
-            </Link>
+            </a>
             <Link
               href="/partner-onboarding"
               className="text-gray-700 hover:text-indigo-800 px-3 py-2 text-sm font-medium rounded-md relative after:absolute after:inset-0 after:bg-gray-100 after:scale-0 hover:after:scale-100 after:transition-transform after:duration-300 after:-z-10"
@@ -123,13 +91,8 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center space-x-4">
             <Link
-
-              // href="/login"
-              // className="text-indigo-800 border-2 border-indigo-800 px-6 py-1.5 rounded text-sm font-medium transition-colors duration-200 hover:bg-indigo-50"
-
-              href="/dashboard"
+              href="/login"
               className="text-indigo-800 border-2 border-indigo-800 px-6 py-1.5 rounded text-sm font-medium transition-colors duration-200 hover:bg-indigo-50"
-
             >
               Login
             </Link>
@@ -139,23 +102,7 @@ export default function Navbar() {
             >
               Register
             </Link>
-            <label>
-              <input
-                type="checkbox"
-                className="hidden"
-                id="theme-toggle"
-                onChange={(e) => {
-                  if (e.target.checked) {
-                    document.documentElement.classList.add("dark")
-                  } else {
-                    document.documentElement.classList.remove("dark")
-                  }
-                }}
-              />
-              <div className="bg-gray-300 dark:bg-gray-600 w-14 h-8 flex items-center rounded-full p-1 duration-300 ease-in-out cursor-pointer">
-                <div className="bg-white dark:bg-gray-300 w-6 h-6 rounded-full shadow-md transform duration-300 ease-in-out"></div>
-              </div>
-            </label>
+      
           </div>
 
           {/* Mobile Menu Button */}
@@ -240,16 +187,9 @@ export default function Navbar() {
             >
               Register
             </Link>
-            <label htmlFor="language-select" className="sr-only">
-              Language
-            </label>
-            <select
-              id="language-select"
-              className="bg-transparent text-gray-700 text-sm focus:outline-none"
-            >
-              <option>English</option>
-              <option>हिन्दी</option>
-            </select>
+            <div className="flex items-center space-x-2">
+          
+            </div>
           </div>
         </div>
       </div>
