@@ -41,14 +41,18 @@ export default function Home() {
               Trusted by Government Organizations
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-              {[...Array(5)].map((_, i) => (
+              {/* {[...Array(5)].map((_, i) => (
                 <img
                   key={i}
                   src={`/assets/logos/gov-logo-${i + 1}.svg`}
                   alt="Partner"
                   className="h-12 w-auto mx-auto opacity-70 hover:opacity-100 transition-opacity"
                 />
-              ))}
+              ))} */}
+             
+            </div>
+            <div className="flex justify-center mt-8">
+              Comming Soon...
             </div>
           </div>
         </section>

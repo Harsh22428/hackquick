@@ -68,6 +68,7 @@ export default function Home() {
     new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(amount);
 
   return (
+    <>
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
@@ -98,7 +99,7 @@ export default function Home() {
                       placeholder={placeholder}
                       className="block w-full rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                       required
-                    />
+                      />
                     {errors[name as keyof EligibilityFormData] && <p className="mt-1 text-sm text-red-600">{errors[name as keyof EligibilityFormData]}</p>}
                   </div>
                 ))}
@@ -133,5 +134,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+                      </>
   );
 }
