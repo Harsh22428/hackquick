@@ -91,7 +91,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center space-x-4">
             <Link
-              href="/login"
+              href="/dashboard"
               className="text-indigo-800 border-2 border-indigo-800 px-6 py-1.5 rounded text-sm font-medium transition-colors duration-200 hover:bg-indigo-50"
             >
               Login
