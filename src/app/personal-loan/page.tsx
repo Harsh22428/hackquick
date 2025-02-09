@@ -13,20 +13,18 @@ import Navbar from "@/components/Navbar";
 
 const banks = [
   { name: "HDFC", selected: true },
-  { name: "Bajaj Finance", selected: false },
+  
   { name: "Chola", selected: false },
   { name: "MyShubhLife", selected: false },
-  { name: "Tata Capital", selected: false },
+ 
   { name: "Fullerton", selected: false },
   { name: "Home Credit", selected: false },
   { name: "Kotak Mahindra", selected: false },
   { name: "Ujjivan Small Finance Bank Ltd", selected: false },
   { name: "InCred", selected: false },
-  { name: "Edelweiss Salaried Personal Loan", selected: false },
-  { name: "Standard Chartered Bank", selected: false },
-  { name: "YES BANK", selected: false },
-  { name: "HDB FINANCIAL SERVICES", selected: false },
-  { name: "Aditya Birla Finance Limited", selected: false },
+  
+  
+  
 ];
 
 const loans = [
@@ -47,7 +45,7 @@ const loans = [
     tag: "Loans Upto Rs. 5 Lakhs",
   },
   {
-    title: "Yes Bank Personal Loan",
+    title: "Kotak Mahindra Bank Personal Loan",
     amount: "₹1L -₹3L",
     interest: "10.25% - 34.05%",
     tenure: "Up to 3 Years",
@@ -161,14 +159,14 @@ export default function Home() {
               <Card key={loan.title} className="p-6 hover:shadow-md transition-shadow">
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge className="text-primary text-white">{loan.tag}</Badge>
-                  <Badge className="bg-emerald-100 text-primary">
+                  <Badge className="bg-lime-400 text-white hover:bg-lime-500 transition-colors">
                     100% Paperless Approval
-                  </Badge>
+                  </Badge> 
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
                   <div className="flex gap-4 flex-1">
-                    <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
                       <IndianRupee className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
@@ -194,13 +192,13 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex flex-col sm:flex-col gap-2 w-full sm:w-auto">
-                    <Button className="w-full sm:w-40 text-primary hover:bg-emerald-600"
+                    <Button className="w-full sm:w-40 bg-primary text-white hover:shadow-md transition-shadow  "
                     onClick={handleLogin}>
                       Apply Now
                     </Button>
                     <Button
                       variant="outline"
-                      className="w-full sm:w-40 text-emerald-600 border-emerald-200 hover:bg-emerald-50"
+                      className="w-full sm:w-40 text-primary border-primary hover:bg-blue-50"
                       >
                       Explore
                     </Button>

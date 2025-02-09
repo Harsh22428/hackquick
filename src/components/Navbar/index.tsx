@@ -78,7 +78,7 @@ export default function Navbar() {
             <Link href="/faqs" className="text-gray-700 hover:text-indigo-800 px-3 py-2 text-sm font-medium rounded-md relative after:absolute after:inset-0 after:bg-gray-100 after:scale-0 hover:after:scale-100 after:transition-transform after:duration-300 after:-z-10">
               FAQs
             </Link>
-            <a href="https://cms.rbi.org.in/cms/indexpage.html#eng" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-indigo-800 px-3 py-2 text-sm font-medium rounded-md relative after:absolute after:inset-0 after:bg-gray-100 after:scale-0 hover:after:scale-100 after:transition-transform after:duration-300 after:-z-10">
+            <a href="/grievances" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-indigo-800 px-3 py-2 text-sm font-medium rounded-md relative after:absolute after:inset-0 after:bg-gray-100 after:scale-0 hover:after:scale-100 after:transition-transform after:duration-300 after:-z-10">
               Grievances
             </a>
             <Link
