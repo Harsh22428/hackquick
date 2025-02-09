@@ -7,7 +7,8 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 export default function LoanEligibilityForm() {
   const [projectCost, setProjectCost] = useState("")
   const [investmentAmount, setInvestmentAmount] = useState("")
@@ -59,6 +60,10 @@ export default function LoanEligibilityForm() {
   }
 
   return (
+    <>
+    <div className="fixed top-0 w-full z-50">
+            <Navbar />
+          </div>
     <div className="max-w-2xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-6">Let&apos;s check your eligibility</h1>
 
@@ -121,7 +126,7 @@ export default function LoanEligibilityForm() {
             <SelectTrigger>
               <SelectValue placeholder="Select constitution" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               <SelectItem value="proprietorship">Proprietorship</SelectItem>
               <SelectItem value="partnership">Partnership</SelectItem>
               <SelectItem value="private-limited">Private Limited</SelectItem>
@@ -155,7 +160,7 @@ export default function LoanEligibilityForm() {
                 onChange={handleInvestmentChange}
                 className="pl-8"
                 placeholder="0"
-              />
+                />
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">₹</span>
             </div>
           </div>
@@ -176,6 +181,8 @@ export default function LoanEligibilityForm() {
         </Button>
       </form>
     </div>
+    <Footer />
+          </>
   )
 }
 
