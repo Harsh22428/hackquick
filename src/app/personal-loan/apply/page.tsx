@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { Calculator, IndianRupee, BadgeCheck, BadgeX } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import {Button} from "@/components/ui/button";
+import router from "next/router";
+import Link from "next/link";
 
 interface EligibilityFormData {
   monthlyIncome: number;
@@ -196,12 +199,21 @@ export default function Home() {
                     className={`text-lg ${result.isEligible ? "text-green-700" : "text-red-700"}`}
                   >
                     {result.message}
+
                   </p>
                   {result.maxAmount && (
+                    <div>
+                      
                     <p className="mt-2 text-green-700">
                       Maximum loan amount you may qualify for:{" "}
                       {formatIndianCurrency(result.maxAmount)}
                     </p>
+                     <Link href={"/consent-form"}>
+                    <Button className="mt-4 w-full bg-blue-500 hover:bg-blue-600"
+                      onClick={(e) => router.push("/consent-form")}>Proceed</Button>
+                      </Link>
+                    </div>
+                    
                   )}
                 </div>
               )}
