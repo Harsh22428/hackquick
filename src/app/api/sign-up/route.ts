@@ -53,10 +53,11 @@ export async function POST(request: Request) {
         verifyCode,
         verifyCodeExpiry: expiryDate,
         isVerified: false,
-        documents: {},
+        // documents: {},
       });
       await newUser.save();
     }
+    console.log("Hello");
 
     const emailResponse = await sendVerificationEmail(
       email,
@@ -73,6 +74,7 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
+
     return Response.json(
       {
         success: true,
